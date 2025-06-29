@@ -19,7 +19,7 @@ import {
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001/api/items";
+const apiUrl = process.env.REACT_APP_API_URL || "https://crud-app-w5bo.onrender.com/api/items";
 
 function App() {
     const [items, setItems] = useState([]);
