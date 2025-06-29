@@ -29,8 +29,21 @@ db.connect(err => {
     });
 });
 
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://crud-app-pfpw.vercel.app'
+];
+
 app.use(cors({
-    origin: process.env.FRONTEND_ORIGIN || '*'
+    origin: function(origin, callback) {
+        // allow requests with no origin (like mobile apps, curl, etc.)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('Not allowed by CORS'));
+        }
+    }
 }));
 app.use(bodyParser.json());
 
