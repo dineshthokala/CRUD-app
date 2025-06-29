@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: crud-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PGHOST
+        value: dpg-d1gfmr6mcj7s73cnh40g-a
+      - key: PGUSER
+        value: crud_db_86q6_user
+      - key: PGPASSWORD
+        value: G2oleXjNlQiwDYPx2cvqKJUDDa6ZDGWo
+      - key: PGDATABASE
+        value: crud_db_86q6
+      - key: PGPORT
+        value: 5432
+      - key: FRONTEND_ORIGIN
+        value: "*"
